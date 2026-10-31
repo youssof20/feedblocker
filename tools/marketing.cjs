@@ -52,7 +52,7 @@ async function main() {
       const height=await page.evaluate(()=>Math.min(600,document.body.scrollHeight));
       await page.setViewportSize({width:340,height});
       await page.mouse.move(0,0);
-      const shot=await page.screenshot({fullPage:true});
+      const shot=await page.screenshot({fullPage:true,animations:'disabled'});
       write(path.join(out,`source/feedblocker-${name}-popup.png`),shot);
       // Preserve the actual UI; only resize the capture and place on a flat canvas.
       const scaled=await sharp(shot).resize({width:374,height:704,fit:'inside'}).png().toBuffer();
