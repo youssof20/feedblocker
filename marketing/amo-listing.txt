@@ -1,0 +1,68 @@
+NAME
+FeedBlocker
+
+PREFERRED SLUG (subject to availability)
+feedblocker
+
+SUMMARY
+Hide feeds, recommendations, Shorts and Reels on YouTube, Reddit, X, Facebook, Instagram and LinkedIn. Choose what to hide on each site. Open source, with no analytics.
+
+DESCRIPTION
+FeedBlocker lets you hide selected parts of six websites, with separate controls for each site and each element.
+
+On YouTube, hide the home feed, sidebar recommendations, Shorts sections or end-screen cards. On Reddit, hide the Home, Popular and All feeds, sidebar suggestions and promoted posts. X, Facebook, Instagram and LinkedIn have their own feed and recommendation controls.
+
+Open the popup on a supported site, enable FeedBlocker and choose what to hide. Changes apply without a Save button. Website access is requested when you first enable that site.
+
+• Expand grouped controls to choose individual elements.
+• Use “Show once” on supported hidden feeds to reveal them until navigation.
+• Pause everywhere for 30 minutes or until tomorrow.
+• Export and import settings as JSON.
+• Use light or dark mode and keyboard-accessible controls.
+
+The extension makes no external network requests and includes no analytics or telemetry. Preferences use Firefox's storage.sync and may sync through your Mozilla account if Firefox Sync is enabled. Source code is available under the MIT licence.
+
+This is an initial public beta. Website layout changes can break hiding rules. X, Facebook, Instagram and LinkedIn controls are labelled Beta; all sites still need live-site verification. X does not have a “Show once” placeholder. Firefox for Android has not been tested. FeedBlocker does not block entire websites or change autoplay settings.
+
+SUPPORT EMAIL
+chuumberry@gmail.com
+
+SUPPORT WEBSITE
+https://github.com/youssof20/feedblocker/issues
+
+HOMEPAGE / SOURCE
+https://github.com/youssof20/feedblocker
+
+LICENCE
+MIT
+
+CATEGORY SUGGESTIONS
+Primary: Other
+Optional second: Appearance
+Use the matching categories available in the current AMO form; these are editorial suggestions.
+
+SUGGESTED TAGS
+feed blocker, youtube, reddit, distraction, productivity
+Use the tags accepted by AMO; these are suggestions, not reserved keywords.
+
+EXPERIMENTAL
+Yes, until the documented live-site checks have passed.
+
+PAYMENT REQUIRED
+No
+
+VERSION 1.0.0 RELEASE NOTES
+Initial public beta. Per-site and per-element controls for six websites, temporary feed reveal where supported, global pause, JSON settings import/export, and light/dark themes. X, Facebook, Instagram and LinkedIn rules are labelled Beta.
+
+NOTES FOR REVIEWERS
+Firefox MV3 extension. Desktop minimum: Firefox 140. Android manifest minimum: 142, but Android is untested and is not recommended for this initial listing.
+Load the extension, open a supported site, then enable that site in the popup. Host permissions are optional and requested on first enable. Settings are stored with storage.sync. No analytics, telemetry, remote code or remote rule updates.
+The runtime uses locally packaged JSON rules and CSS. Generated files are rules/*.css and content/site-data.js. Rebuild with node tools/build.js; run node tools/test.js and node tools/check.js. There is no minification or obfuscation. Source and generator are in the linked repository.
+The report button opens a GitHub issue draft containing the current site URL and browser user agent; the user chooses whether to submit it. No issue is submitted automatically.
+Live logged-in site verification is outstanding. Listing screenshots show the real popup with deterministic sample settings in a browser preview, not live-site tests.
+
+SCREENSHOT CAPTIONS (upload in this order)
+01 — YouTube controls in light mode. Hide individual sections and leave comment threads visible. Popup preview with sample settings.
+02 — Shorts sub-options in dark mode. Control the home shelf, navigation tab and search results separately. Popup preview with sample settings.
+03 — Reddit controls, other supported sites, pause and settings export. Popup preview with sample settings.
+04 — LinkedIn controls in dark mode, including the Beta label for unverified rules. Popup preview with sample settings.

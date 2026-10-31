@@ -1,0 +1,69 @@
+{
+  "id": "reddit",
+  "name": "Reddit",
+  "status": "stable",
+  "matches": ["*://*.reddit.com/*", "*://reddit.com/*"],
+  "hostnames": ["reddit.com"],
+  "origins": ["*://*.reddit.com/*", "*://reddit.com/*"],
+  "routes": {
+    "feed": ["/", "/r/popular", "/r/popular/*", "/r/all", "/r/all/*", "/r/home", "/best", "/r/best"]
+  },
+  "groups": [
+    {
+      "id": "feed",
+      "label": "Home, Popular and All feeds",
+      "default": true,
+      "routes": ["feed"],
+      "selectors": [
+        "shreddit-feed",
+        "#main-content > div > shreddit-feed",
+        "[data-testid=\"posts-list\"]"
+      ],
+      "placeholder": {
+        "text": "Feed hidden.",
+        "target": ["#main-content", "main", "shreddit-app"]
+      }
+    },
+    {
+      "id": "sidebar",
+      "label": "Sidebar communities",
+      "default": true,
+      "routes": ["feed"],
+      "selectors": [
+        "shreddit-sidebar",
+        "#right-sidebar-container",
+        "aside[data-testid=\"sidebar\"]"
+      ]
+    },
+    {
+      "id": "promoted",
+      "label": "Promoted posts",
+      "default": true,
+      "selectors": [
+        "shreddit-ad-post",
+        "shreddit-post[is-promoted]",
+        "[data-testid=\"promoted-post\"]"
+      ]
+    },
+    {
+      "id": "recommendations",
+      "label": "Recommendations inside threads",
+      "default": true,
+      "selectors": [
+        "[data-testid=\"recommendation-unit\"]",
+        "shreddit-recommendation-unit",
+        "shreddit-community-highlight"
+      ]
+    },
+    {
+      "id": "comments",
+      "label": "Comment threads (composer stays)",
+      "default": false,
+      "selectors": [
+        "shreddit-comment-tree",
+        "#comment-tree",
+        "[data-testid=\"comment-tree\"]"
+      ]
+    }
+  ]
+}

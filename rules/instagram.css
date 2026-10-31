@@ -1,0 +1,15 @@
+/* Generated from rules/instagram.json. Do not edit by hand. */
+/* Run: node tools/build.js */
+
+html[data-fb-on~="feed"][data-fb-route~="home"]:not([data-fb-show~="feed"]) main[role="main"] article{display:none !important}
+html[data-fb-on~="feed"][data-fb-route~="home"]:not([data-fb-show~="feed"]) main[role="main"] div:has(> div > article){display:none !important}
+
+html[data-fb-on~="explore"][data-fb-route~="explore"] main[role="main"] article{display:none !important}
+html[data-fb-on~="explore"][data-fb-route~="explore"] main[role="main"] div:has(> div > article){display:none !important}
+
+html[data-fb-on~="reels"] a[href="/reels/"]{display:none !important}
+html[data-fb-on~="reels"] main[role="main"] a[href^="/reels/"]{display:none !important}
+html[data-fb-on~="reels"] [aria-label="Reels"]{display:none !important}
+
+html[data-fb-on~="stories"] div[aria-label="Stories"]{display:none !important}
+html[data-fb-on~="stories"] main[role="main"] ul:has(a[href*="/stories/"]){display:none !important}

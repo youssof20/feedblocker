@@ -1,0 +1,54 @@
+{
+  "id": "instagram",
+  "name": "Instagram",
+  "status": "beta",
+  "matches": ["*://*.instagram.com/*"],
+  "hostnames": ["instagram.com"],
+  "origins": ["*://*.instagram.com/*"],
+  "routes": {
+    "home": ["/"],
+    "explore": ["/explore", "/explore/*", "/explore/tags/*"]
+  },
+  "groups": [
+    {
+      "id": "feed",
+      "label": "Home feed",
+      "default": true,
+      "routes": ["home"],
+      "selectors": [
+        "main[role=\"main\"] article",
+        "main[role=\"main\"] div:has(> div > article)"
+      ],
+      "placeholder": {
+        "text": "Feed hidden.",
+        "target": ["main[role=\"main\"]", "main"]
+      }
+    },
+    {
+      "id": "explore",
+      "label": "Explore and suggested posts",
+      "default": true,
+      "routes": ["explore"],
+      "selectors": ["main[role=\"main\"] article", "main[role=\"main\"] div:has(> div > article)"]
+    },
+    {
+      "id": "reels",
+      "label": "Reels",
+      "default": true,
+      "selectors": [
+        "a[href=\"/reels/\"]",
+        "main[role=\"main\"] a[href^=\"/reels/\"]",
+        "[aria-label=\"Reels\"]"
+      ]
+    },
+    {
+      "id": "stories",
+      "label": "Stories tray",
+      "default": false,
+      "selectors": [
+        "div[aria-label=\"Stories\"]",
+        "main[role=\"main\"] ul:has(a[href*=\"/stories/\"])"
+      ]
+    }
+  ]
+}

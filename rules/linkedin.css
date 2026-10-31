@@ -1,0 +1,14 @@
+/* Generated from rules/linkedin.json. Do not edit by hand. */
+/* Run: node tools/build.js */
+
+html[data-fb-on~="feed"][data-fb-route~="feed"]:not([data-fb-show~="feed"]) main [data-testid="main-feed"]{display:none !important}
+html[data-fb-on~="feed"][data-fb-route~="feed"]:not([data-fb-show~="feed"]) main .scaffold-finite-scroll__content{display:none !important}
+html[data-fb-on~="feed"][data-fb-route~="feed"]:not([data-fb-show~="feed"]) main div[data-testid="mainFeed"]{display:none !important}
+
+html[data-fb-on~="news"] aside[aria-label="LinkedIn News"]{display:none !important}
+html[data-fb-on~="news"] [data-testid="news-module"]{display:none !important}
+html[data-fb-on~="news"] aside:has([aria-label="LinkedIn News"]){display:none !important}
+
+html[data-fb-on~="promoted"] [data-testid="feed-shared-update-v2"]:has([aria-label="Promoted"]){display:none !important}
+html[data-fb-on~="promoted"] div.feed-shared-update-v2:has([data-testid="promoted-badge"]){display:none !important}
+html[data-fb-on~="promoted"] [data-testid="feed-shared-update-v2"]:has(a[href*="/ad/"]){display:none !important}

@@ -1,0 +1,18 @@
+/* Generated from rules/x.json. Do not edit by hand. */
+/* Run: node tools/build.js */
+
+html[data-fb-on~="foryou"][data-fb-route~="home"] [data-testid="primaryColumn"]:has([role="tab"][aria-selected="true"][href="/home"]) [aria-label="Timeline: Your Home Timeline"]{display:none !important}
+html[data-fb-on~="foryou"][data-fb-route~="home"] [data-testid="primaryColumn"]:has([role="tab"][aria-selected="true"]:not([href*="following"])) [aria-label="Timeline: Your Home Timeline"]{display:none !important}
+html[data-fb-on~="foryou"][data-fb-route~="home"] [data-testid="primaryColumn"]:has([role="tab"][aria-selected="true"]:not([href*="following"])) [aria-label="Timeline: Your Home Timeline"]:not(:has([data-testid="tweetTextarea_0"])){display:none !important}
+
+html[data-fb-on~="trends"] [data-testid="sidebarColumn"] [aria-label="Timeline: Trending now"]{display:none !important}
+html[data-fb-on~="trends"] [data-testid="sidebarColumn"] section:has([data-testid="trend"]){display:none !important}
+html[data-fb-on~="trends"] [data-testid="sidebarColumn"] [data-testid="trend"]{display:none !important}
+
+html[data-fb-on~="who-to-follow"] [data-testid="sidebarColumn"] [aria-label="Who to follow"]{display:none !important}
+html[data-fb-on~="who-to-follow"] [data-testid="sidebarColumn"] aside:has([data-testid="UserCell"]){display:none !important}
+html[data-fb-on~="who-to-follow"] [aria-label="Who to follow"]{display:none !important}
+
+html[data-fb-on~="explore"] [data-testid="AppTabBar_Explore_Link"]{display:none !important}
+html[data-fb-on~="explore"] nav[aria-label="Primary"] a[href="/explore"]{display:none !important}
+html[data-fb-on~="explore"] [data-testid="sidebarColumn"] a[href="/explore"]{display:none !important}

@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>FeedBlocker</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <header class="site-head">
+      <div class="site-title">
+        <span class="site-name" id="site-name">FeedBlocker</span>
+        <span class="chip" id="site-status" hidden>Beta</span>
+      </div>
+      <label class="switch" id="master-wrap" hidden>
+        <input type="checkbox" id="master" role="switch" aria-label="Enable FeedBlocker on this site" />
+        <span class="track"></span>
+      </label>
+    </header>
+
+    <p class="hint" id="site-hint" hidden></p>
+
+    <main class="elements" id="elements"></main>
+
+    <section class="other" id="other">
+      <h2 class="section-title">Sites</h2>
+      <div class="other-list" id="other-list"></div>
+    </section>
+
+    <footer class="foot">
+      <div class="foot-row">
+        <button type="button" class="btn" id="pause">Pause 30 min</button>
+        <button type="button" class="btn" id="export">Export</button>
+        <button type="button" class="btn" id="reset">Reset</button>
+      </div>
+      <div class="foot-links">
+        <button type="button" class="link" id="pause-tomorrow">Until tomorrow</button>
+        <button type="button" class="link" id="import">Import</button>
+        <button type="button" class="link" id="report">Report broken element</button>
+        <input type="file" id="import-file" accept="application/json,.json" hidden />
+      </div>
+      <p class="foot-status" id="foot-status" role="status" aria-live="polite" hidden></p>
+    </footer>
+
+    <script src="../shared/compile.js"></script>
+    <script src="popup.js"></script>
+  </body>
+</html>

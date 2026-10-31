@@ -1,0 +1,15 @@
+FeedBlocker privacy policy
+Effective date: 31 October 2026
+
+FeedBlocker does not collect browsing history, page content, account information or usage analytics. It has no telemetry, advertising services or developer-operated servers. It does not make external network requests or download remote rules.
+
+The extension checks the current tab URL to select the appropriate site controls. On websites you enable, it uses packaged rules to hide elements and to provide temporary reveal and navigation behavior. This processing happens in your browser.
+
+Preferences, including enabled sites, element choices and pause expiry, are stored using Firefox storage.sync. Firefox may synchronize these preferences through your Mozilla account when Firefox Sync is enabled. This is handled by Firefox, not by the FeedBlocker developer.
+
+Export creates a JSON settings file at your request. Import reads a file you select and replaces your settings.
+
+“Report broken element” opens GitHub with an issue draft that includes the current page URL, browser user agent and extension version. GitHub receives the URL used to open that draft. Review it before submitting; page URLs can contain private information. Submitting an issue is your choice and is governed by GitHub's privacy practices. Emailing support likewise shares the contents of your message with the developer and email providers.
+
+Contact: chuumberry@gmail.com
+Source: https://github.com/youssof20/feedblocker

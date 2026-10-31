@@ -1,0 +1,64 @@
+{
+  "id": "facebook",
+  "name": "Facebook",
+  "status": "beta",
+  "matches": ["*://*.facebook.com/*"],
+  "hostnames": ["facebook.com"],
+  "origins": ["*://*.facebook.com/*"],
+  "routes": {
+    "home": ["/", "/home.php"]
+  },
+  "groups": [
+    {
+      "id": "home-feed",
+      "label": "Home feed",
+      "default": true,
+      "routes": ["home"],
+      "selectors": [
+        "div[role=\"main\"] div[role=\"feed\"]",
+        "div[role=\"feed\"]",
+        "div[data-pagelet=\"Feed\"]"
+      ],
+      "placeholder": {
+        "text": "Feed hidden.",
+        "target": ["div[role=\"main\"]", "div[role=\"feed\"]"]
+      }
+    },
+    {
+      "id": "stories",
+      "label": "Reels and Stories",
+      "default": true,
+      "routes": ["home"],
+      "selectors": [
+        "div[aria-label=\"Stories\"]",
+        "div[role=\"region\"][aria-label=\"Stories\"]",
+        "div[aria-label=\"Reels and short videos\"]"
+      ]
+    },
+    {
+      "id": "sponsored",
+      "label": "Sponsored posts",
+      "default": true,
+      "selectors": [
+        "div[role=\"feed\"] > div:has(a[href*=\"/ads/about\"])",
+        "div[role=\"article\"]:has(a[href*=\"/ads/about\"])",
+        "div[data-pagelet^=\"FeedUnit\"]:has(a[href*=\"/ads/about\"])"
+      ]
+    },
+    {
+      "id": "right-column",
+      "label": "Right-column contacts and ads",
+      "default": true,
+      "selectors": ["div[role=\"complementary\"]", "#rightCol"]
+    },
+    {
+      "id": "suggestions",
+      "label": "Group and page suggestions",
+      "default": true,
+      "selectors": [
+        "div[role=\"feed\"] > div:has(a[href*=\"/groups/\"][role=\"link\"]):has([aria-label=\"Join\"])",
+        "div[role=\"main\"] [aria-label=\"Suggested for you\"]"
+      ]
+    }
+  ]
+}

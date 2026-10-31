@@ -1,0 +1,20 @@
+/* Generated from rules/facebook.json. Do not edit by hand. */
+/* Run: node tools/build.js */
+
+html[data-fb-on~="home-feed"][data-fb-route~="home"]:not([data-fb-show~="home-feed"]) div[role="main"] div[role="feed"]{display:none !important}
+html[data-fb-on~="home-feed"][data-fb-route~="home"]:not([data-fb-show~="home-feed"]) div[role="feed"]{display:none !important}
+html[data-fb-on~="home-feed"][data-fb-route~="home"]:not([data-fb-show~="home-feed"]) div[data-pagelet="Feed"]{display:none !important}
+
+html[data-fb-on~="stories"][data-fb-route~="home"] div[aria-label="Stories"]{display:none !important}
+html[data-fb-on~="stories"][data-fb-route~="home"] div[role="region"][aria-label="Stories"]{display:none !important}
+html[data-fb-on~="stories"][data-fb-route~="home"] div[aria-label="Reels and short videos"]{display:none !important}
+
+html[data-fb-on~="sponsored"] div[role="feed"] > div:has(a[href*="/ads/about"]){display:none !important}
+html[data-fb-on~="sponsored"] div[role="article"]:has(a[href*="/ads/about"]){display:none !important}
+html[data-fb-on~="sponsored"] div[data-pagelet^="FeedUnit"]:has(a[href*="/ads/about"]){display:none !important}
+
+html[data-fb-on~="right-column"] div[role="complementary"]{display:none !important}
+html[data-fb-on~="right-column"] #rightCol{display:none !important}
+
+html[data-fb-on~="suggestions"] div[role="feed"] > div:has(a[href*="/groups/"][role="link"]):has([aria-label="Join"]){display:none !important}
+html[data-fb-on~="suggestions"] div[role="main"] [aria-label="Suggested for you"]{display:none !important}

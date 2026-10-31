@@ -1,0 +1,146 @@
+{
+  "id": "youtube",
+  "name": "YouTube",
+  "status": "stable",
+  "matches": ["*://*.youtube.com/*", "*://youtube.com/*"],
+  "hostnames": ["youtube.com"],
+  "origins": ["*://*.youtube.com/*", "*://youtube.com/*"],
+  "routes": {
+    "home": ["/"],
+    "watch": ["/watch"],
+    "shorts": ["/shorts/*"],
+    "feed": ["/feed/*"]
+  },
+  "groups": [
+    {
+      "id": "home-feed",
+      "label": "Home feed",
+      "default": true,
+      "routes": ["home"],
+      "selectors": [
+        "ytd-browse[page-subtype=\"home\"] ytd-rich-grid-renderer",
+        "ytd-browse[page-subtype=\"home\"] #contents.ytd-rich-grid-renderer"
+      ],
+      "placeholder": {
+        "text": "Home feed hidden.",
+        "target": ["ytd-browse[page-subtype=\"home\"]", "ytd-browse"]
+      }
+    },
+    {
+      "id": "sidebar",
+      "label": "Sidebar recommendations",
+      "default": true,
+      "routes": ["watch"],
+      "selectors": [
+        "#secondary #related",
+        "ytd-watch-next-secondary-results-renderer",
+        "#related.ytd-watch-flexy"
+      ]
+    },
+    {
+      "id": "shorts",
+      "label": "Shorts",
+      "type": "group",
+      "children": [
+        {
+          "id": "shorts-shelf",
+          "label": "Shelf on home",
+          "default": true,
+          "selectors": [
+            "ytd-rich-section-renderer:has(ytd-rich-shelf-renderer[is-shorts])",
+            "ytd-rich-shelf-renderer[is-shorts]",
+            "ytd-reel-shelf-renderer"
+          ]
+        },
+        {
+          "id": "shorts-tab",
+          "label": "Shorts tab",
+          "default": true,
+          "selectors": [
+            "ytd-guide-entry-renderer:has(a[title=\"Shorts\"])",
+            "ytd-mini-guide-entry-renderer[aria-label=\"Shorts\"]",
+            "ytd-guide-entry-renderer:has(a[href*=\"/shorts\"])"
+          ]
+        },
+        {
+          "id": "shorts-search",
+          "label": "In search results",
+          "default": false,
+          "selectors": [
+            "ytd-video-renderer:has(a[href*=\"/shorts/\"])",
+            "ytd-rich-item-renderer:has(a[href*=\"/shorts/\"])",
+            "ytd-grid-video-renderer:has(a[href*=\"/shorts/\"])"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "endscreen",
+      "label": "End-screen cards",
+      "default": true,
+      "routes": ["watch"],
+      "selectors": [
+        ".ytp-ce-element",
+        ".ytp-endscreen-content",
+        ".ytp-cards-teaser",
+        ".ytp-ce-covering-overlay"
+      ]
+    },
+    {
+      "id": "comments",
+      "label": "Comment threads (composer stays)",
+      "default": false,
+      "routes": ["watch"],
+      "selectors": [
+        "ytd-comments#comments #contents:not(:has(ytd-comment-simplebox-renderer))",
+        "ytd-comments#comments ytd-comment-thread-renderer",
+        "#comments > ytd-comment-thread-renderer"
+      ]
+    },
+    {
+      "id": "trending",
+      "label": "Trending / Explore",
+      "default": true,
+      "selectors": [
+        "ytd-guide-entry-renderer:has(a[href=\"/feed/trending\"])",
+        "ytd-mini-guide-entry-renderer[aria-label=\"Trending\"]",
+        "ytd-guide-entry-renderer:has(a[title=\"Trending\"])"
+      ]
+    },
+    {
+      "id": "more",
+      "label": "More",
+      "type": "group",
+      "children": [
+        {
+          "id": "notifications",
+          "label": "Notification bell",
+          "default": false,
+          "selectors": ["#notification-button", "ytd-notification-topbar-button-renderer"]
+        },
+        {
+          "id": "live-chat",
+          "label": "Live chat",
+          "default": false,
+          "routes": ["watch"],
+          "selectors": ["#chat", "ytd-live-chat-frame"]
+        },
+        {
+          "id": "mixes",
+          "label": "Playlists and mixes",
+          "default": false,
+          "selectors": ["ytd-radio-renderer", "ytd-compact-radio-renderer"]
+        }
+      ]
+    },
+    {
+      "id": "redirect-subs",
+      "label": "Send the home page to Subscriptions",
+      "default": false,
+      "type": "behavior",
+      "behavior": "redirect",
+      "from": ["/"],
+      "to": "/feed/subscriptions"
+    }
+  ]
+}

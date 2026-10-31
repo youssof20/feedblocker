@@ -1,0 +1,22 @@
+/* Generated from rules/reddit.json. Do not edit by hand. */
+/* Run: node tools/build.js */
+
+html[data-fb-on~="feed"][data-fb-route~="feed"]:not([data-fb-show~="feed"]) shreddit-feed{display:none !important}
+html[data-fb-on~="feed"][data-fb-route~="feed"]:not([data-fb-show~="feed"]) #main-content > div > shreddit-feed{display:none !important}
+html[data-fb-on~="feed"][data-fb-route~="feed"]:not([data-fb-show~="feed"]) [data-testid="posts-list"]{display:none !important}
+
+html[data-fb-on~="sidebar"][data-fb-route~="feed"] shreddit-sidebar{display:none !important}
+html[data-fb-on~="sidebar"][data-fb-route~="feed"] #right-sidebar-container{display:none !important}
+html[data-fb-on~="sidebar"][data-fb-route~="feed"] aside[data-testid="sidebar"]{display:none !important}
+
+html[data-fb-on~="promoted"] shreddit-ad-post{display:none !important}
+html[data-fb-on~="promoted"] shreddit-post[is-promoted]{display:none !important}
+html[data-fb-on~="promoted"] [data-testid="promoted-post"]{display:none !important}
+
+html[data-fb-on~="recommendations"] [data-testid="recommendation-unit"]{display:none !important}
+html[data-fb-on~="recommendations"] shreddit-recommendation-unit{display:none !important}
+html[data-fb-on~="recommendations"] shreddit-community-highlight{display:none !important}
+
+html[data-fb-on~="comments"] shreddit-comment-tree{display:none !important}
+html[data-fb-on~="comments"] #comment-tree{display:none !important}
+html[data-fb-on~="comments"] [data-testid="comment-tree"]{display:none !important}

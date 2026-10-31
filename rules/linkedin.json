@@ -1,0 +1,48 @@
+{
+  "id": "linkedin",
+  "name": "LinkedIn",
+  "status": "beta",
+  "matches": ["*://*.linkedin.com/*"],
+  "hostnames": ["linkedin.com"],
+  "origins": ["*://*.linkedin.com/*"],
+  "routes": {
+    "feed": ["/feed", "/feed/", "/"]
+  },
+  "groups": [
+    {
+      "id": "feed",
+      "label": "Home feed",
+      "default": true,
+      "routes": ["feed"],
+      "selectors": [
+        "main [data-testid=\"main-feed\"]",
+        "main .scaffold-finite-scroll__content",
+        "main div[data-testid=\"mainFeed\"]"
+      ],
+      "placeholder": {
+        "text": "Feed hidden.",
+        "target": ["main", "div[role=\"main\"]"]
+      }
+    },
+    {
+      "id": "news",
+      "label": "\"LinkedIn News\" panel",
+      "default": true,
+      "selectors": [
+        "aside[aria-label=\"LinkedIn News\"]",
+        "[data-testid=\"news-module\"]",
+        "aside:has([aria-label=\"LinkedIn News\"])"
+      ]
+    },
+    {
+      "id": "promoted",
+      "label": "Promoted posts",
+      "default": true,
+      "selectors": [
+        "[data-testid=\"feed-shared-update-v2\"]:has([aria-label=\"Promoted\"])",
+        "div.feed-shared-update-v2:has([data-testid=\"promoted-badge\"])",
+        "[data-testid=\"feed-shared-update-v2\"]:has(a[href*=\"/ad/\"])"
+      ]
+    }
+  ]
+}

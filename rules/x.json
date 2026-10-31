@@ -1,0 +1,55 @@
+{
+  "id": "x",
+  "name": "X",
+  "status": "beta",
+  "matches": ["*://*.x.com/*", "*://*.twitter.com/*"],
+  "hostnames": ["x.com", "twitter.com"],
+  "origins": ["*://*.x.com/*", "*://*.twitter.com/*"],
+  "routes": {
+    "home": ["/home", "/"],
+    "explore": ["/explore", "/explore/*", "/search", "/search/*"]
+  },
+  "groups": [
+    {
+      "id": "foryou",
+      "label": "For You timeline",
+      "default": true,
+      "routes": ["home"],
+      "selectors": [
+        "[data-testid=\"primaryColumn\"]:has([role=\"tab\"][aria-selected=\"true\"][href=\"/home\"]) [aria-label=\"Timeline: Your Home Timeline\"]",
+        "[data-testid=\"primaryColumn\"]:has([role=\"tab\"][aria-selected=\"true\"]:not([href*=\"following\"])) [aria-label=\"Timeline: Your Home Timeline\"]",
+        "[data-testid=\"primaryColumn\"]:has([role=\"tab\"][aria-selected=\"true\"]:not([href*=\"following\"])) [aria-label=\"Timeline: Your Home Timeline\"]:not(:has([data-testid=\"tweetTextarea_0\"]))"
+      ]
+    },
+    {
+      "id": "trends",
+      "label": "Trends and \"What's happening\"",
+      "default": true,
+      "selectors": [
+        "[data-testid=\"sidebarColumn\"] [aria-label=\"Timeline: Trending now\"]",
+        "[data-testid=\"sidebarColumn\"] section:has([data-testid=\"trend\"])",
+        "[data-testid=\"sidebarColumn\"] [data-testid=\"trend\"]"
+      ]
+    },
+    {
+      "id": "who-to-follow",
+      "label": "Who to follow",
+      "default": true,
+      "selectors": [
+        "[data-testid=\"sidebarColumn\"] [aria-label=\"Who to follow\"]",
+        "[data-testid=\"sidebarColumn\"] aside:has([data-testid=\"UserCell\"])",
+        "[aria-label=\"Who to follow\"]"
+      ]
+    },
+    {
+      "id": "explore",
+      "label": "Explore tab",
+      "default": true,
+      "selectors": [
+        "[data-testid=\"AppTabBar_Explore_Link\"]",
+        "nav[aria-label=\"Primary\"] a[href=\"/explore\"]",
+        "[data-testid=\"sidebarColumn\"] a[href=\"/explore\"]"
+      ]
+    }
+  ]
+}

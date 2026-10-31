@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="FeedBlocker on">
+  <rect width="32" height="32" rx="7" fill="#0060df"/>
+  <g fill="#ffffff">
+    <rect x="7" y="9" width="18" height="3" rx="1.5"/>
+    <rect x="7" y="15" width="18" height="3" rx="1.5"/>
+    <rect x="7" y="21" width="11" height="3" rx="1.5"/>
+  </g>
+  <path d="M7 25 25 7" fill="none" stroke="#ffffff" stroke-width="2.6" stroke-linecap="round"/>
+</svg>

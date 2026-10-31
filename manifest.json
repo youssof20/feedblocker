@@ -1,0 +1,49 @@
+{
+  "manifest_version": 3,
+  "name": "FeedBlocker",
+  "version": "1.0.0",
+  "description": "Hide feeds, recommendations and short-form video sections on six sites. CSS-first, open source, no analytics.",
+  "author": "youssof20",
+  "homepage_url": "https://github.com/youssof20/feedblocker",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "chuumberry@gmail.com",
+      "strict_min_version": "140.0",
+      "data_collection_permissions": {
+        "required": ["none"]
+      }
+    },
+    "gecko_android": {
+      "strict_min_version": "142.0"
+    }
+  },
+  "permissions": ["storage", "scripting", "activeTab", "alarms"],
+  "optional_host_permissions": [
+    "*://*.youtube.com/*",
+    "*://youtube.com/*",
+    "*://*.reddit.com/*",
+    "*://reddit.com/*",
+    "*://*.x.com/*",
+    "*://*.twitter.com/*",
+    "*://*.facebook.com/*",
+    "*://*.instagram.com/*",
+    "*://*.linkedin.com/*"
+  ],
+  "background": {
+    "scripts": ["shared/compile.js", "background.js"]
+  },
+  "action": {
+    "default_title": "FeedBlocker",
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "icons/off.svg",
+      "32": "icons/off.svg",
+      "48": "icons/off.svg",
+      "96": "icons/off.svg"
+    }
+  },
+  "icons": {
+    "48": "icons/on.svg",
+    "96": "icons/on.svg"
+  }
+}

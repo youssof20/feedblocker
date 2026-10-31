@@ -1,0 +1,43 @@
+/* Generated from rules/youtube.json. Do not edit by hand. */
+/* Run: node tools/build.js */
+
+html[data-fb-on~="home-feed"][data-fb-route~="home"]:not([data-fb-show~="home-feed"]) ytd-browse[page-subtype="home"] ytd-rich-grid-renderer{display:none !important}
+html[data-fb-on~="home-feed"][data-fb-route~="home"]:not([data-fb-show~="home-feed"]) ytd-browse[page-subtype="home"] #contents.ytd-rich-grid-renderer{display:none !important}
+
+html[data-fb-on~="sidebar"][data-fb-route~="watch"] #secondary #related{display:none !important}
+html[data-fb-on~="sidebar"][data-fb-route~="watch"] ytd-watch-next-secondary-results-renderer{display:none !important}
+html[data-fb-on~="sidebar"][data-fb-route~="watch"] #related.ytd-watch-flexy{display:none !important}
+
+html[data-fb-on~="shorts-shelf"] ytd-rich-section-renderer:has(ytd-rich-shelf-renderer[is-shorts]){display:none !important}
+html[data-fb-on~="shorts-shelf"] ytd-rich-shelf-renderer[is-shorts]{display:none !important}
+html[data-fb-on~="shorts-shelf"] ytd-reel-shelf-renderer{display:none !important}
+
+html[data-fb-on~="shorts-tab"] ytd-guide-entry-renderer:has(a[title="Shorts"]){display:none !important}
+html[data-fb-on~="shorts-tab"] ytd-mini-guide-entry-renderer[aria-label="Shorts"]{display:none !important}
+html[data-fb-on~="shorts-tab"] ytd-guide-entry-renderer:has(a[href*="/shorts"]){display:none !important}
+
+html[data-fb-on~="shorts-search"] ytd-video-renderer:has(a[href*="/shorts/"]){display:none !important}
+html[data-fb-on~="shorts-search"] ytd-rich-item-renderer:has(a[href*="/shorts/"]){display:none !important}
+html[data-fb-on~="shorts-search"] ytd-grid-video-renderer:has(a[href*="/shorts/"]){display:none !important}
+
+html[data-fb-on~="endscreen"][data-fb-route~="watch"] .ytp-ce-element{display:none !important}
+html[data-fb-on~="endscreen"][data-fb-route~="watch"] .ytp-endscreen-content{display:none !important}
+html[data-fb-on~="endscreen"][data-fb-route~="watch"] .ytp-cards-teaser{display:none !important}
+html[data-fb-on~="endscreen"][data-fb-route~="watch"] .ytp-ce-covering-overlay{display:none !important}
+
+html[data-fb-on~="comments"][data-fb-route~="watch"] ytd-comments#comments #contents:not(:has(ytd-comment-simplebox-renderer)){display:none !important}
+html[data-fb-on~="comments"][data-fb-route~="watch"] ytd-comments#comments ytd-comment-thread-renderer{display:none !important}
+html[data-fb-on~="comments"][data-fb-route~="watch"] #comments > ytd-comment-thread-renderer{display:none !important}
+
+html[data-fb-on~="trending"] ytd-guide-entry-renderer:has(a[href="/feed/trending"]){display:none !important}
+html[data-fb-on~="trending"] ytd-mini-guide-entry-renderer[aria-label="Trending"]{display:none !important}
+html[data-fb-on~="trending"] ytd-guide-entry-renderer:has(a[title="Trending"]){display:none !important}
+
+html[data-fb-on~="notifications"] #notification-button{display:none !important}
+html[data-fb-on~="notifications"] ytd-notification-topbar-button-renderer{display:none !important}
+
+html[data-fb-on~="live-chat"][data-fb-route~="watch"] #chat{display:none !important}
+html[data-fb-on~="live-chat"][data-fb-route~="watch"] ytd-live-chat-frame{display:none !important}
+
+html[data-fb-on~="mixes"] ytd-radio-renderer{display:none !important}
+html[data-fb-on~="mixes"] ytd-compact-radio-renderer{display:none !important}

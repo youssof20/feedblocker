@@ -1,0 +1,12 @@
+{
+  "name": "feedblocker",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A CSS-first feed blocker for Firefox.",
+  "license": "MIT",
+  "scripts": {
+    "build": "node tools/build.js",
+    "test": "node tools/test.js && node tools/check.js",
+    "check": "node tools/check.js"
+  }
+}
